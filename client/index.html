@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="hoMyGodeApp">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Ho My Gode</title>
+
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="css/style.css"><!-- load style.css -->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="script.js"></script>
+</head>
+<body ng-controller="mainController">
+	<div class="page">
+		<header>
+			<a ng-href="/"><img class="logo" src="images/logo.png" alt="logo"></a>
+			<span>Une idee simple, trouver LE sextoy qu'il vous faut au coin de votre rue. Deja 14 864 annonces en France, choisissez votre region et trouvez le sextoy qui vous fera plaisir !</span>
+		</header>
+		
+		<div id="wrapper">
+			<div ng-view></div>
+		</div>
+
+		<footer>
+			<span>OHMYGODE - All Rights Reserved</span>
+			<a ng-href="/webjs/#/login">login</a>
+			<a ng-href="/signup">signup</a>	
+		</footer>
+	</div>
+</body>
+</html>
