@@ -19,10 +19,10 @@ Technologies:
     * [AngularStrap](http://mgcrea.github.io/angular-strap/)
 
 Team:
-  * (Ugo MARE)[https://www.linkedin.com/profile/view?id=138493457]
-  * (Tom YAU)[https://www.linkedin.com/profile/view?id=188899901]
-  * (Mickael RODRIGUES)[https://www.linkedin.com/profile/view?id=348589372]
-  * (Geoffrey HERVET)[https://www.linkedin.com/profile/view?id=87381160]
+  * [Ugo MARE](https://www.linkedin.com/profile/view?id=138493457)
+  * [Tom YAU](https://www.linkedin.com/profile/view?id=188899901)
+  * [Mickael RODRIGUES](https://www.linkedin.com/profile/view?id=348589372)
+  * [Geoffrey HERVET](https://www.linkedin.com/profile/view?id=87381160)
 
 Resources:
   * [Most Common JavaScript Mistakes](http://www.slideshare.net/YoannGotthilf/common-40893059)
