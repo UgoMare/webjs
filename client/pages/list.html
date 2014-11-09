@@ -7,7 +7,7 @@
 				<p>{{ product.created_at | date:'d MMM'}}</p>
 				<p>{{ product.created_at | date:'hh:mm'}}</p>
 			</div>
-			<img src="{{ product.thumb }}" alt="{{ product.name }}" class="thumb">
+			<img src="{{ product.thumb }}" alt="{{ product.name }}" class="img-thumbnail">
 			<div class="info">
 				<p><b><a ng-href="">{{ product.name }}</a></b></p>
 				<p>{{ product.category }}</p>
@@ -19,7 +19,7 @@
 	<div class="lastest">
 		<h2>Produits a la une</h2>
 			<div class="product" ng-repeat="product in products">
-				<img src="{{ product.thumb }}" alt="{{ product.name }}" class="thumb">
+				<img src="{{ product.thumb }}" alt="{{ product.name }}" class="img-thumbnail">
 				<div class="info">
 					<p></p><b><a ng-href="">{{ product.name }}</a></b></p>
 					<p><b>{{ product.price }} €</b></p>

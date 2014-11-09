@@ -44,7 +44,7 @@ header span {
     background-color: #2ecc71;
 }
 
-.products {
+.products, .product_page {
     width: 70%;
 }
 
@@ -83,7 +83,7 @@ header span {
     line-height: 1;
 }
 
-.lastest {
+.lastest, .params {
     width: 30%;
     display: inline-block;
     background-color: #27ae60;
@@ -101,8 +101,35 @@ header span {
     border-bottom: 1px solid #F62459;
 }
 
+.lastest .product:last-child {
+    border: none;
+}
+
 .lastest .product img {
     width: 150px;
     height: 150px;
     margin: 15px;
+}
+
+.product_page {
+    
+}
+
+.product_page h2{
+    text-align: left;
+}
+
+.product_page img {
+    height: 450px;
+    width: 450px;
+}
+
+.product_page .thumbs {
+    width: 450px;
+    margin: 10px auto: ;
+}
+
+.product_page .thumbs img {
+    height: 140px;
+    width: 140px;
 }

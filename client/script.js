@@ -1,19 +1,7 @@
 var hoMyGodeApp = angular.module('hoMyGodeApp', ['ngRoute']);
 
-///Routes
 
-// $products = [
-// 	{id: 1,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 2,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 3,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 4,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 5,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 6,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 7,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 8,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 9,  name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"},
-// 	{id: 10, name: "produit1", descr: "Ceci est un produit", category: "cat", prix: "10", seller: "seller1", thumb "images/thumb.png", created_at: Date.new, phone_number:" 0622334455"}
-// ];
+///Routes
 
 hoMyGodeApp.config(function($routeProvider) {
 	$routeProvider
@@ -30,6 +18,14 @@ hoMyGodeApp.config(function($routeProvider) {
 			templateUrl: 'pages/list.html',
 			controller: 'listController'
 		})
+
+		//product
+
+		.when('/product/:productId', {
+			templateUrl: 'pages/product.html',
+			controller: 'productController'
+		})
+
 
 		//login
 
@@ -53,6 +49,7 @@ hoMyGodeApp.controller('mainController', function($scope, $route, $routeParams){
 
 
 hoMyGodeApp.controller('listController', function($scope){
+
 	$scope.products = [
 		{id: 1,  name: "produit1",  descr: "Ceci est un produit", category: "cat1",  price: "10", seller: "seller1",  location: "location1",  thumb: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
 		{id: 2,  name: "produit2",  descr: "Ceci est un produit", category: "cat2",  price: "10", seller: "seller2",  location: "location2",  thumb: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
@@ -65,6 +62,11 @@ hoMyGodeApp.controller('listController', function($scope){
 		{id: 9,  name: "produit9",  descr: "Ceci est un produit", category: "cat9",  price: "10", seller: "seller9",  location: "location9",  thumb: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
 		{id: 10, name: "produit10", descr: "Ceci est un produit", category: "cat10", price: "10", seller: "seller10", location: "location10", thumb: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"}
 	];
+});
+
+hoMyGodeApp.controller('productController', function($scope){
+
+	$scope.product = {id: 1,  name: "produit1",  descr: "Ceci est un produit", category: "cat1",  price: "10", seller: "seller1",  location: "location1",  img: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"};
 });
 
 hoMyGodeApp.controller('loginController', function($scope){
