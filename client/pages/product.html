@@ -1,0 +1,29 @@
+<div class="jumbotron text-center">
+
+	<div class="product_page">
+		<h2>{{ product.name }}</h2>
+		<div class="product">
+		<!-- 	<div class="date">
+				<p>{{ product.created_at | date:'d MMM'}}</p>
+				<p>{{ product.created_at | date:'hh:mm'}}</p>
+			</div> -->
+			<img src="{{ product.img }}" alt="{{ product.name }}" class="img-rounded">
+			<div class="thumbs">
+				<img src="{{ product.img }}" alt="{{ product.name }}" class="img-thumbnail">
+				<img src="{{ product.img }}" alt="{{ product.name }}" class="img-thumbnail">
+				<img src="{{ product.img }}" alt="{{ product.name }}" class="img-thumbnail">
+			</div>
+
+			<div class="info">
+				<p><b><a ng-href="">{{ product.name }}</a></b></p>
+				<p>{{ product.category }}</p>
+				<p>{{ product.location }}</p>
+				<p><b>{{ product.price }} €</b></p>
+			</div>
+		</div>
+	</div>
+	<div class="params">
+		<h3>Contact</h3>
+		<h3>Gerer son anonce</h3>
+	</div>
+</div>
