@@ -1,8 +1,26 @@
+<div>
+	<form class="navbar-form" role="search">
+	  <div class="form-group">
+	    <input type="text" class="form-control" placeholder="Search" ng-model="searchProduct">
+	    <select>
+	    	<option value="Categorie1"></option>
+	    	<option value="Categorie2"></option>
+	    	<option value="Categorie3"></option>
+	    </select>
+	   	<select>
+	    	<option value="Region1"></option>
+	    	<option value="Region2"></option>
+	    	<option value="Region3"></option>
+	    </select>
+	    <input type="text" class="form-control" placeholder="Search">
+	  </div>
+	  <button type="submit" class="btn btn-default">Rechercher</button>
+	</form>
+</div>
+
 <div class="jumbotron text-center">
-	<h1>List Page</h1>
-	
 	<div class="products">
-		<div class="product" ng-repeat="product in products">
+		<div class="product" ng-repeat="product in products | filter:searchProduct">
 			<div class="date">
 				<p>{{ product.created_at | date:'d MMM'}}</p>
 				<p>{{ product.created_at | date:'hh:mm'}}</p>
@@ -18,12 +36,12 @@
 	</div>
 	<div class="lastest">
 		<h2>Produits a la une</h2>
-			<div class="product" ng-repeat="product in products">
-				<img src="{{ product.thumb }}" alt="{{ product.name }}" class="img-thumbnail">
-				<div class="info">
-					<p></p><b><a ng-href="">{{ product.name }}</a></b></p>
-					<p><b>{{ product.price }} €</b></p>
-				</div>
+		<div class="product" ng-repeat="product in products">
+			<img src="{{ product.thumb }}" alt="{{ product.name }}" class="img-thumbnail">
+			<div class="info">
+				<p></p><b><a ng-href="">{{ product.name }}</a></b></p>
+				<p><b>{{ product.price }} €</b></p>
 			</div>
+		</div>
 	</div>
 </div>

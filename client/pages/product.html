@@ -1,12 +1,13 @@
 <div class="jumbotron text-center">
 
 	<div class="product_page">
-		<h2>{{ product.name }}</h2>
+
 		<div class="product">
-		<!-- 	<div class="date">
-				<p>{{ product.created_at | date:'d MMM'}}</p>
-				<p>{{ product.created_at | date:'hh:mm'}}</p>
-			</div> -->
+		<h2>{{ product.name }}</h2>
+		Ajouté le {{ product.created_at | date:'d MMM'}}
+		à {{ product.created_at | date:'hh:mm'}}
+		par <a ng-href="">{{ product.seller }}</a>
+			
 			<img src="{{ product.img }}" alt="{{ product.name }}" class="img-rounded">
 			<div class="thumbs">
 				<img src="{{ product.img }}" alt="{{ product.name }}" class="img-thumbnail">
@@ -15,15 +16,24 @@
 			</div>
 
 			<div class="info">
-				<p><b><a ng-href="">{{ product.name }}</a></b></p>
-				<p>{{ product.category }}</p>
-				<p>{{ product.location }}</p>
-				<p><b>{{ product.price }} €</b></p>
+				<p><b>Prix: <span class="price">{{ product.price }} €</span></b></p>
+				<p>Ville: {{ product.location }}</p>
+				<p>Code postal: {{ product.zip_code }}</p>
+				<div class="line"></div>
+				<p>Categorie: {{ product.category }}</p>
+				<div class="line"></div>
+				<p><b>Description:</b></p>
+				<p>{{ product.descr }}</p>	
 			</div>
 		</div>
 	</div>
 	<div class="params">
-		<h3>Contact</h3>
+		<h3>Contacter {{ product.seller }}</h3>
+		<div><span class="contact-icon"></span>{{ product.phone_number }}</div>
+		<div><span class="contact-icon"></span>{{ product.email_addr }}</div>
 		<h3>Gerer son anonce</h3>
+		<a ng-href=""><div><span class="contact-icon"></span>Editer</div></a>
+		<a ng-href=""><div><span class="contact-icon"></span>Supprimer</div></a>
+
 	</div>
 </div>
