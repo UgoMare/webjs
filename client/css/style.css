@@ -44,6 +44,14 @@ header span {
     position: relative;
 }
 
+.form-group {
+    width: 100%;
+}
+
+.form-group select, .form-group input {
+    width: 234px;
+}
+
 .jumbotron {
     background-color: #2ecc71;
     padding-top: 0px;

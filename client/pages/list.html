@@ -1,23 +1,31 @@
 <div>
 	<form class="navbar-form" role="search">
 	  <div class="form-group">
-	    <input type="text" class="form-control" placeholder="Search" ng-model="searchProduct">
-
-  		<select id="basic" class="selectpicker show-tick form-control" data-live-search="true" title="Region">
-          <option>cow</option>
-          <option>bull</option>
-          <option>ox</option>
+	  	<!-- Search by name -->
+	    <input type="text" class="form-control" placeholder="" ng-model="searchProduct.name">
+		<!-- Search by category -->
+  		<select id="basic" class="selectpicker show-tick form-control" data-live-search="true" title="Categorie" ng-model="searchProduct.category">
+  		  <option value="">Toutes les categories</option>
+          <option value="cat1">cat1</option>
+          <option value="cat2">cat2</option>
+          <option value="cat3">cat3</option>
         </select>
-
-	    <input type="text" class="form-control" placeholder="Search">
+		<!-- Search by region -->
+		<select id="basic" class="selectpicker show-tick form-control" data-live-search="true" title="Region" ng-model="searchProduct.region">
+  		  <option value="">Toutes la France</option>
+          <option value="region1">region1</option>
+          <option value="region2">region2</option>
+          <option value="region3">region3</option>
+        </select>
+		<!-- Seach by location -->
+	    <input type="text" class="form-control" placeholder="Ville" ng-model="searchProduct.location">
 	  </div>
-	  <button type="submit" class="btn btn-default">Rechercher</button>
 	</form>
 </div>
 
 <div class="jumbotron text-center">
 	<div class="products">
-		<div class="product" ng-repeat="product in products | filter:searchProduct">
+		<div class="product" ng-repeat="product in products | filter:searchProduct:strict">
 			<div class="date">
 				<p>{{ product.created_at | date:'d MMM'}}</p>
 				<p>{{ product.created_at | date:'hh:mm'}}</p>
