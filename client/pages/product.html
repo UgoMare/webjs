@@ -29,11 +29,34 @@
 	</div>
 	<div class="params">
 		<h3>Contacter {{ product.seller }}</h3>
-		<div><span class="contact-icon"></span>{{ product.phone_number }}</div>
-		<div><span class="contact-icon"></span>{{ product.email_addr }}</div>
+		<div>
+			<div class="wrap-icon">
+				<span class="glyphicon glyphicon-earphone"></span>
+			</div>
+			<p>{{ product.phone_number }}</p>
+		</div>
+
+		<div>
+			<div class="wrap-icon">
+				<span class="glyphicon glyphicon-envelope"></span>
+			</div>
+			<p>{{ product.email_addr }}</p>
+		</div>
+		
 		<h3>Gerer son anonce</h3>
-		<a ng-href=""><div><span class="contact-icon"></span>Editer</div></a>
-		<a ng-href=""><div><span class="contact-icon"></span>Supprimer</div></a>
+		<div>
+			<div class="wrap-icon">
+				<span class="glyphicon glyphicon-pencil"></span>
+			</div>
+			<a ng-href=""><p>Editer</p></a>
+		</div>
+
+		<div>
+			<div class="wrap-icon">
+				<span class="glyphicon glyphicon-trash"></span>
+			</div>
+			<a ng-href=""><p>Supprimer</p></a>
+		</div>
 
 	</div>
 </div>

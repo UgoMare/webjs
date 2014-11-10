@@ -49,7 +49,7 @@ header span {
 }
 
 .form-group select, .form-group input {
-    width: 234px;
+    width: 234px !important;
 }
 
 .jumbotron {
@@ -64,6 +64,7 @@ header span {
     display: inline-block;
     float: left;
     padding-right: 20px;
+    min-height: 1px;
 }
 
 .products .product {
@@ -101,7 +102,7 @@ header span {
     line-height: 1;
 }
 
-.lastest, .params {
+.latest, .params {
     margin-top: 20px;
     width: 30%;
     display: inline-block;
@@ -110,22 +111,22 @@ header span {
     float: left;
 }
 
-.lastest h2 {
+.latest h2 {
     color: #9b59b6;
 }
 
-.lastest .product {
+.latest .product {
     width: 80%;
     margin: 0 10% 10px 10%;
     padding-bottom: 10px;
     border-bottom: 1px solid #F62459;
 }
 
-.lastest .product:last-child {
+.latest .product:last-child {
     border: none;
 }
 
-.lastest .product img {
+.latest .product img {
     width: 150px;
     height: 150px;
     margin: 15px;
@@ -166,4 +167,12 @@ header span {
 
 .product_page .info {
     text-align: left;
+}
+
+.wrap-icon {
+    height: 42px;
+}
+
+.wrap-icon .glyphicon{
+    font-size: 35px;
 }
