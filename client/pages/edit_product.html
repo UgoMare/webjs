@@ -1,0 +1,56 @@
+<div class="jumbotron text-center">
+  <h2>Editer un produit</h2>
+  <div class="new-product-container">
+     <form name="SendMessageForm">
+        <div class="left-column">
+            <div class="form-group">
+                <label for="inputName">Nom</label><span class="mandatory-star">*</span>
+                <input type="text" class="form-control" id="inputName" placeholder="Nom" ng-model="product.name" >
+
+
+                <label for="inputCategory">Categorie</label><span class="mandatory-star">*</span>
+                <select class="selectpicker show-tick form-control" title="Categorie" ng-model="product.category">
+                    <option value="cat1">cat1</option>
+                    <option value="cat2">cat2</option>
+                    <option value="cat3">cat3</option>
+                </select>
+
+            <!-- Search by region -->
+
+                <label for="inputRegion">Region</label><span class="mandatory-star">*</span>
+                <select class="selectpicker show-tick form-control" title="Region" ng-model="product.region">
+                    <option value="region1">region1</option>
+                    <option value="region2">region2</option>
+                    <option value="region3">region3</option>
+                </select>
+
+                <label for="inputPrice">Prix</label>
+                <input type="text" class="form-control" id="inputPrice" placeholder="10" ng-model="product.price">
+
+
+                <label for="inputCity">Ville</label>
+                <input type="text" class="form-control" id="inputCity" placeholder="Ville" ng-model="product.location">
+
+
+                <label for="inputZip">Code Postal</label>
+                <input type="text" class="form-control" id="inputZip" placeholder="Code Postal" ng-model="product.zip_code">
+            </div>
+
+        </div> <!-- !left column -->
+        <div class="right-column">
+
+            <div class="form-group">
+                <label for="textareaDescr">Description</label>
+                <textarea class="form-control" rows="15" id="textareaDescr" placeholder="" ng-model="product.descr"></textarea>
+
+                <label for="inputImages">Images</label>
+                <input type="text" class="form-control" id="inputThumb1" placeholder="" ng-model="product.image1">
+                <input type="text" class="form-control" id="inputThumb2" placeholder="" ng-model="product.image2">
+                <input type="text" class="form-control" id="inputThumb3" placeholder="" ng-model="product.image3">
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-success" ng-click="save(product)">Enregistrer</button>
+    </form>
+</div>
+</div>

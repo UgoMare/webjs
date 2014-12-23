@@ -14,9 +14,16 @@ hoMyGodeApp.config(function($routeProvider) {
 
 		//product list
 
-		.when('/list/:regionId?', {
-			templateUrl: 'pages/list.html',
-			controller: 'listController'
+		.when('/product', {
+			templateUrl: 'pages/list_product.html',
+			controller: 'productsController'
+		})
+
+		//product new
+
+		.when('/product/new', {
+			templateUrl: 'pages/new_product.html',
+			controller: 'productNewController'
 		})
 
 		//product
@@ -33,12 +40,7 @@ hoMyGodeApp.config(function($routeProvider) {
 			controller: 'productMessageController'
 		})
 
-		//product new
 
-		.when('/product/new', {
-			templateUrl: 'pages/new_product.html',
-			controller: 'productNewController'
-		})
 
 		//poduct edit
 
@@ -59,16 +61,13 @@ hoMyGodeApp.config(function($routeProvider) {
 		;
 });
 
-
-
 hoMyGodeApp.controller('mainController', function($scope, $route, $routeParams){
 	
 	$scope.params = $routeParams;
 
 });
 
-
-hoMyGodeApp.controller('listController', function($scope){
+hoMyGodeApp.controller('productsController', function($scope){
 
 	$scope.products = [
 		{id: 1,  name: "produit1",  descr: "Ceci est un produit", category: "cat1",  price: "10", seller: "seller1",  region: "region1",  location: "location1",  zip_code: "12345", thumb: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
@@ -93,6 +92,70 @@ hoMyGodeApp.controller('productMessageController', function($scope){
 
 	$scope.product = {id: 1,  name: "produit1", category: "cat1",  price: "10", seller: "seller1",  location: "location1", zip_code: "12345", img: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"};
 });
+
+hoMyGodeApp.controller('productNewController', function($scope){
+
+	$scope.save = function save(product) {
+		if (product != undefined 
+		    && product.name != undefined
+		    && product.category != undefined
+		    && product.region != undefined) {
+				console.log(product);
+		        PostService.create(post).success(function(data) {
+		            $location.path("/admin");
+		        }).error(function(status, data) {
+		            console.log(status);
+		            console.log(data);
+		});
+	}
+}});
+
+hoMyGodeApp.controller('productEditController', function($scope){
+
+	$scope.product = {id: 1,  name: "produit1", descr: "Ceci est un produit", category: "cat1",  price: "10", seller: "seller1",  location: "location1", zip_code: "12345", img: "images/thumb.png", created_at: new Date(), phone_number:"0622334455", region: "region1"};
+
+
+    //     var id = $routeParams.id;
+
+    //     PostService.read(id).success(function(data) {
+    //         $scope.post = data;
+    //         $('#textareaContent').wysihtml5({"font-styles": false});
+    //         $('#textareaContent').val($sce.trustAsHtml(data.content));
+    //     }).error(function(status, data) {
+    //         $location.path("/admin");
+    //     });
+
+    //     $scope.save = function save(post, shouldPublish) {
+    //         if (post !== undefined 
+    //             && post.title !== undefined && post.title != "") {
+
+    //             var content = $('#textareaContent').val();
+    //             if (content !== undefined && content != "") {
+    //                 post.content = content;
+
+    //                 if (shouldPublish != undefined && shouldPublish == true) {
+    //                     post.is_published = true;
+    //                 } else {
+    //                     post.is_published = false;
+    //                 }
+
+    //                 // string comma separated to array
+    //                 if (Object.prototype.toString.call(post.tags) !== '[object Array]') {
+    //                     post.tags = post.tags.split(',');
+    //                 }
+                    
+    //                 PostService.update(post).success(function(data) {
+    //                     $location.path("/admin");
+    //                 }).error(function(status, data) {
+    //                     console.log(status);
+    //                     console.log(data);
+    //                 });
+    //             }
+    //         }
+    //     }
+    // }
+});
+
 
 
 hoMyGodeApp.controller('loginController', function($scope){
