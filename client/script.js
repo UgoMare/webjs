@@ -12,7 +12,7 @@ hoMyGodeApp.config(function($routeProvider) {
 			controller: 'mainController'
 		})
 
-		//list
+		//product list
 
 		.when('/list/:regionId?', {
 			templateUrl: 'pages/list.html',
@@ -26,6 +26,26 @@ hoMyGodeApp.config(function($routeProvider) {
 			controller: 'productController'
 		})
 
+		//product message
+
+		.when('/product/:productId/message', {
+			templateUrl: 'pages/send_message.html',
+			controller: 'productMessageController'
+		})
+
+		//product new
+
+		.when('/product/new', {
+			templateUrl: 'pages/new_product.html',
+			controller: 'productNewController'
+		})
+
+		//poduct edit
+
+		.when('/product/:productId/edit', {
+			templateUrl: 'pages/edit_product.html',
+			controller: 'productEditController'
+		})
 
 		//login
 
@@ -66,8 +86,14 @@ hoMyGodeApp.controller('listController', function($scope){
 
 hoMyGodeApp.controller('productController', function($scope){
 
-	$scope.product = {id: 1,  name: "produit1",  descr: "Ceci est un produit", category: "cat1",  price: "10", seller: "seller1",  location: "location1", zip_code: "12345", img: "images/thumb.png", created_at: new Date(), phone_number:"0622334455", email_addr: "seller@mail.com"};
+	$scope.product = {id: 1,  name: "produit1",  descr: "Ceci est un produit", category: "cat1",  price: "10", seller: "seller1",  location: "location1", zip_code: "12345", img: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"};
 });
+
+hoMyGodeApp.controller('productMessageController', function($scope){
+
+	$scope.product = {id: 1,  name: "produit1", category: "cat1",  price: "10", seller: "seller1",  location: "location1", zip_code: "12345", img: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"};
+});
+
 
 hoMyGodeApp.controller('loginController', function($scope){
 	

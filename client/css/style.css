@@ -37,6 +37,12 @@ header {
     float: left;
 }
 
+.mandatory-star{
+    font-weight: bold;
+    color: red;
+    font-size: 120%;
+}
+
 header span {
     float:left;
     width: 230px;
@@ -48,7 +54,7 @@ header span {
     width: 100%;
 }
 
-.form-group select, .form-group input {
+.navbar-form .form-group select, .navbar-form .form-group input {
     width: 234px !important;
 }
 
@@ -175,4 +181,13 @@ header span {
 
 .wrap-icon .glyphicon{
     font-size: 35px;
+}
+
+.send-msg-container{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.send-msg-container input {
+    width: 100%;
 }
