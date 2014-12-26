@@ -6,13 +6,13 @@
 		<h2>{{ product.name }}</h2>
 		Ajouté le {{ product.created_at | date:'d MMM'}}
 		à {{ product.created_at | date:'hh:mm'}}
-		par <a ng-href="">{{ product.seller }}</a>
+		par {{ product.seller }}
 			
-			<img src="{{ product.img }}" alt="{{ product.name }}" class="img-rounded">
+			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-rounded">
 			<div class="thumbs">
-				<img src="{{ product.img }}" alt="{{ product.name }}" class="img-thumbnail">
-				<img src="{{ product.img }}" alt="{{ product.name }}" class="img-thumbnail">
-				<img src="{{ product.img }}" alt="{{ product.name }}" class="img-thumbnail">
+				<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-thumbnail">
+				<img src="{{ product.img2 }}" alt="{{ product.name }}" class="img-thumbnail">
+				<img src="{{ product.img3 }}" alt="{{ product.name }}" class="img-thumbnail">
 			</div>
 
 			<div class="info">

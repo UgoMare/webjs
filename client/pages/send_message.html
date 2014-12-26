@@ -1,9 +1,8 @@
 <div class="jumbotron text-center">
-		<h2>Envoyer un message a propos du produit {{ product.name }}</h2>
-		Dans {{ product.category }}
-		Ajouté le {{ product.created_at | date:'d MMM'}}
-		à {{ product.created_at | date:'hh:mm'}}
-		par {{ product.seller }}
+		<h2>Envoyer un message a {{ product.seller }} a propos du produit {{ product.name }}</h2>
+		Ajouté le {{ product.created_at | date:'d MMM'}} à {{ product.created_at | date:'hh:mm'}}
+        dans {{ product.category }}
+
 
 <div class="send-msg-container">
 

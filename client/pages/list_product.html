@@ -4,19 +4,13 @@
 	  	<!-- Search by name -->
 	    <input type="text" class="form-control" placeholder="" ng-model="searchProduct.name">
 		<!-- Search by category -->
-  		<select class="selectpicker show-tick form-control" data-live-search="true" title="Categorie" ng-model="searchProduct.category">
-  		  <option value="">Toutes les categories</option>
-          <option value="cat1">cat1</option>
-          <option value="cat2">cat2</option>
-          <option value="cat3">cat3</option>
-        </select>
+		<select class="selectpicker show-tick form-control" data-live-search="true" title="Category" ng-model="searchProduct.category" ng-options="category.name for category in categories">
+			<option value="">Toutes les categories</option>
+		</select>
 		<!-- Search by region -->
-		<select class="selectpicker show-tick form-control" data-live-search="true" title="Region" ng-model="searchProduct.region">
-  		  <option value="">Toutes la France</option>
-          <option value="region1">region1</option>
-          <option value="region2">region2</option>
-          <option value="region3">region3</option>
-        </select>
+		<select class="selectpicker show-tick form-control" data-live-search="true" title="Region" ng-model="searchProduct.region" ng-options="region.name for region in regions">
+			<option value="">Toute la France</option>
+		</select>
 		<!-- Seach by location -->
 	    <input type="text" class="form-control" placeholder="Ville" ng-model="searchProduct.location">
 	  </div>
@@ -30,7 +24,7 @@
 				<p>{{ product.created_at | date:'d MMM'}}</p>
 				<p>{{ product.created_at | date:'hh:mm'}}</p>
 			</div>
-			<img src="{{ product.thumb }}" alt="{{ product.name }}" class="img-thumbnail">
+			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-thumbnail">
 			<div class="info">
 				<p><b><a ng-href="/webjs/#/product/{{product.id}}">{{ product.name }}</a></b></p>
 				<p>{{ product.category }}</p>
@@ -42,9 +36,9 @@
 	<div class="latest">
 		<h2>Produits a la une</h2>
 		<div class="product" ng-repeat="product in products">
-			<img src="{{ product.thumb }}" alt="{{ product.name }}" class="img-thumbnail">
+			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-thumbnail">
 			<div class="info">
-				<p></p><b><a ng-href="">{{ product.name }}</a></b></p>
+				<p></p><b><a ng-href="/webjs/#/product/{{product.id}}">{{ product.name }}</a></b></p>
 				<p><b>{{ product.price }} €</b></p>
 			</div>
 		</div>
