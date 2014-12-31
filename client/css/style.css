@@ -210,3 +210,10 @@ header span {
 .new-product-container .form-group label {
     margin-bottom: 0px;
 }
+
+/*SignUp*/
+
+.signup-container{
+    width: 60%;
+    margin:  0 auto;
+}

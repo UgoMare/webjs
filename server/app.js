@@ -1,17 +1,15 @@
-'use strict';
-
-var express		= require('express');
-var mongoose	= require('mongoose');
-var config		= require('./config/environment');
-
-mongoose.set('debug', true);
-mongoose.connect(config.mongo.url);
-
+var express = require('express');
 var app = express();
+var jwt = require('express-jwt');
+var bodyParser = require('body-parser'); //bodyparser + json + urlencoder
+var morgan  = require('morgan'); // logger
+var tokenManager = require('./config/token_manager');
+var secret = require('./config/secret');
 
-require('./config/routes')(app);
-app.listen(config.port);
+app.listen(3001);
+app.use(bodyParser());
+app.use(morgan());
 
-console.log('Server is running');
-
-module.exports = app;
+var routes = {};
+routes.posts = require('./routes/products.js');
+routes.users = require('./routes/users.js');
