@@ -13,3 +13,23 @@ app.use(morgan());
 var routes = {};
 routes.posts = require('./routes/products.js');
 routes.users = require('./routes/users.js');
+
+app.all('*', function(req, res, next) {
+  res.set('Access-Control-Allow-Origin', 'http://localhost');
+  res.set('Access-Control-Allow-Credentials', true);
+  res.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
+  res.set('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Authorization');
+  if ('OPTIONS' == req.method) return res.send(200);
+  next();
+});
+
+//Create a new user
+app.post('/user/register', routes.users.register); 
+
+//Login
+app.post('/user/signin', routes.users.signin); 
+
+//Logout
+app.get('/user/logout', jwt({secret: secret.secretToken}), routes.users.logout); 
+
+console.log('Blog API is starting on port 3001');

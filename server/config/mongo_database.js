@@ -18,9 +18,9 @@ var Schema = mongoose.Schema;
 // User schema
 var User = new Schema({
     username:       { type: String, required: true, unique: true },
-    email:          { type: String, required: true, unique: true },
-    phone_number:   { type: String },
     password:       { type: String, required: true },
+    email:          { type: String },
+    phone_number:   { type: String },
     created:        { type: Date, default: Date.now }
 });
 
@@ -32,7 +32,7 @@ var Product = new Schema({
     city:       { type: String },
     zip_code:   { type: String },
     is_pub:     { type: Boolean, default: true },
-    // descr:      { type: Text },
+    descr:      { type: String },
     img1:       { type: String },
     img2:       { type: String },
     img3:       { type: String },

@@ -40,8 +40,6 @@ hoMyGodeApp.config(function($routeProvider) {
 			controller: 'productMessageController'
 		})
 
-
-
 		//poduct edit
 
 		.when('/product/:id/edit', {
