@@ -1,16 +1,16 @@
 
 products = [
-		{id: 1,  name: "produit1",  descr: "Ceci est un produit", category: "category 1",  price: "10", seller: "seller1",  region: "Auvergne", location: "location1",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 2,  name: "produit2",  descr: "Ceci est un produit", category: "category 2",  price: "10", seller: "seller2",  region: "Auvergne", location: "location2",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 3,  name: "produit3",  descr: "Ceci est un produit", category: "category 3",  price: "10", seller: "seller3",  region: "Auvergne", location: "location3",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 4,  name: "produit4",  descr: "Ceci est un produit", category: "category 4",  price: "10", seller: "seller4",  region: "Auvergne", location: "location4",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 5,  name: "produit5",  descr: "Ceci est un produit", category: "category 5",  price: "10", seller: "seller5",  region: "Auvergne", location: "location5",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 6,  name: "produit6",  descr: "Ceci est un produit", category: "category 6",  price: "10", seller: "seller6",  region: "Auvergne", location: "location6",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 7,  name: "produit7",  descr: "Ceci est un produit", category: "category 7",  price: "10", seller: "seller7",  region: "Auvergne", location: "location7",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 8,  name: "produit8",  descr: "Ceci est un produit", category: "category 8",  price: "10", seller: "seller8",  region: "Auvergne", location: "location8",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 9,  name: "produit9",  descr: "Ceci est un produit", category: "category 9",  price: "10", seller: "seller9",  region: "Auvergne", location: "location9",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-		{id: 10, name: "produit10", descr: "Ceci est un produit", category: "category 10", price: "10", seller: "seller10", region: "Auvergne", location: "location10", zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"}
-	];
+{id: 1,  name: "produit1",  descr: "Ceci est un produit", category: "category 1",  price: "10", seller: "seller1",  region: "Auvergne", location: "location1",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 2,  name: "produit2",  descr: "Ceci est un produit", category: "category 2",  price: "10", seller: "seller2",  region: "Auvergne", location: "location2",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 3,  name: "produit3",  descr: "Ceci est un produit", category: "category 3",  price: "10", seller: "seller3",  region: "Auvergne", location: "location3",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 4,  name: "produit4",  descr: "Ceci est un produit", category: "category 4",  price: "10", seller: "seller4",  region: "Auvergne", location: "location4",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 5,  name: "produit5",  descr: "Ceci est un produit", category: "category 5",  price: "10", seller: "seller5",  region: "Auvergne", location: "location5",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 6,  name: "produit6",  descr: "Ceci est un produit", category: "category 6",  price: "10", seller: "seller6",  region: "Auvergne", location: "location6",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 7,  name: "produit7",  descr: "Ceci est un produit", category: "category 7",  price: "10", seller: "seller7",  region: "Auvergne", location: "location7",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 8,  name: "produit8",  descr: "Ceci est un produit", category: "category 8",  price: "10", seller: "seller8",  region: "Auvergne", location: "location8",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 9,  name: "produit9",  descr: "Ceci est un produit", category: "category 9",  price: "10", seller: "seller9",  region: "Auvergne", location: "location9",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
+{id: 10, name: "produit10", descr: "Ceci est un produit", category: "category 10", price: "10", seller: "seller10", region: "Auvergne", location: "location10", zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"}
+];
 
 // products = [
 // 		{id: 1,  name: "Boules de Geïsha",  descr: "Ceci est un Boules de Geïsha", category: "Boules de Geïsha", price: "30", seller: "seller1",  region: "Auvergne", location: "location1",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
@@ -71,37 +71,37 @@ categories = [
 { name: "Gode Ceinture Homme" }
 ];
 
-app.controller('mainController', function($scope, $route, $routeParams){
+appControllers.controller('mainController', function($scope, $route, $routeParams){
 	
 	$scope.params = $routeParams;
 
 });
 
-app.controller('productsController', function($scope){
+appControllers.controller('productsController', function($scope){
 
 	$scope.products = products;
 	$scope.regions = regions;
 	$scope.categories = categories;
 });
 
-app.controller('productController', function($scope, $routeParams){
+appControllers.controller('productController', function($scope, $routeParams){
 	
 	var id = $routeParams.id;
 	$scope.product = products[id-1];
 });
 
-app.controller('productMessageController', function($scope, $routeParams){
+appControllers.controller('productMessageController', function($scope, $routeParams){
 
 	var id = $routeParams.id;
 	$scope.product = products[id-1];
 });
 
-app.controller('productNewController', function($scope){
+appControllers.controller('productNewController', function($scope){
 
-$scope.uploadFile = function(files) {
-    var fd = new FormData();
- 
-    fd.append("file", files[0]);
+	$scope.uploadFile = function(files) {
+		var fd = new FormData();
+
+		fd.append("file", files[0]);
 
     // $http.post("uploadUrl", fd, {
     //     withCredentials: true,
@@ -112,22 +112,22 @@ $scope.uploadFile = function(files) {
 };
 
 
-	$scope.save = function save(product) {
-		if (product != undefined 
-		    && product.name != undefined
-		    && product.category != undefined
-		    && product.region != undefined) {
-				console.log(product);
-		        PostService.create(post).success(function(data) {
-		            $location.path("/admin");
-		        }).error(function(status, data) {
-		            console.log(status);
-		            console.log(data);
-		});
-	}
+$scope.save = function save(product) {
+	if (product != undefined 
+		&& product.name != undefined
+		&& product.category != undefined
+		&& product.region != undefined) {
+		console.log(product);
+	PostService.create(post).success(function(data) {
+		$location.path("/admin");
+	}).error(function(status, data) {
+		console.log(status);
+		console.log(data);
+	});
+}
 }});
 
-app.controller('productEditController', function($scope, $routeParams){
+appControllers.controller('productEditController', function($scope, $routeParams){
 
 	var id = $routeParams.id;
 	$scope.product = products[id-1];
@@ -163,7 +163,7 @@ app.controller('productEditController', function($scope, $routeParams){
     //                 if (Object.prototype.toString.call(post.tags) !== '[object Array]') {
     //                     post.tags = post.tags.split(',');
     //                 }
-                    
+
     //                 PostService.update(post).success(function(data) {
     //                     $location.path("/admin");
     //                 }).error(function(status, data) {
@@ -177,22 +177,40 @@ app.controller('productEditController', function($scope, $routeParams){
 });
 
 
-app.controller('adminUserController', ['$scope', '$location', 'AuthenticationService'],
-	function($scope, $location, AuthenticationService){
-	$scope.register = function register (username, email, password, passwordConfirm){
-		if (false){
-			console.log("already connected");
-		}
-		else {
-			UserService.register(username, email, password, passwordConfirm)
-			.success(function(){
-				console.log("success");
-			})
-			.error(function(status, data){
-				console.log("error");
-				console.log(status);
-				console.log(data);
-			})
+appControllers.controller('adminUserController', ['$scope', '$location', 'UserService', 'AuthenticationService',
+	function adminUserController($scope, $location, UserService, AuthenticationService){
+
+
+       $scope.signIn = function signIn(username, password) {
+            if (username != null && password != null) {
+
+                UserService.signIn(username, password).success(function(data) {
+                    AuthenticationService.isAuthenticated = true;
+                    $window.sessionStorage.token = data.token;
+                    $location.path("/admin");
+                }).error(function(status, data) {
+                    console.log(status);
+                    console.log(data);
+                });
+            }
+        }
+		
+		$scope.register = function register (username, email, phone, password, passwordConfirm){
+			console.log(username);
+			if (false){
+				console.log("already connected");
+			}
+			else {
+				UserService.register(username, email, phone, password, passwordConfirm)
+				.success(function(){
+					$location.path("/login");
+				})
+				.error(function(status, data){
+					console.log("error");
+					console.log(status);
+					console.log(data);
+				})
+			}
 		}
 	}
-});
+]);

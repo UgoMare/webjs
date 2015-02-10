@@ -49,12 +49,13 @@ exports.logout = function(req, res) {
 }
 
 exports.register = function(req, res) {
+	console.log(req.body);
 	var username 			 = req.body.username || '';
 	var password 			 = req.body.password || '';
 	var passwordConfirmation = req.body.passwordConfirmation || '';
 	var email 				 = req.body.email || null;
 	var phone_number 		 = req.body.phone_number || null;
-
+	
 	if (username == '' || password == '' || password != passwordConfirmation) {
 		return res.send(400);
 	}

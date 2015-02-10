@@ -5,23 +5,23 @@
         <div class="left-column">
             <div class="form-group">
                 <label for="inputName">Nom</label><span class="mandatory-star">*</span>
-                <input type="text" class="form-control" id="inputName" placeholder="John Doe">
+                <input type="text" class="form-control" id="inputName" placeholder="John Doe" ng-model='register.username' >
 
                 <label for="inputEmail">Email</label><span class="mandatory-star">*</span>
-                <input type="email" class="form-control" id="inputEmail" placeholder="jack@example.com">
+                <input type="email" class="form-control" id="inputEmail" placeholder="jack@example.com" ng-model='register.email'>
 
                 <label for="inputTelephone">Telephone</label>
-                <input type="tel" class="form-control" id="inputTelephone">
+                <input type="tel" class="form-control" id="inputTelephone" ng-model='register.phone'>
 
                 <label for="inputPassword">Mot de passe</label><span class="mandatory-star">*</span>
-                <input type="password" class="form-control" id="inputPassword">
+                <input type="password" class="form-control" id="inputPassword" ng-model='register.pass'>
 
 				<label for="inputRepeatPassword">Confirmation du mot de passe</label><span class="mandatory-star">*</span>
-                <input type="password" class="form-control" id="inputRepeatPassword">
+                <input type="password" class="form-control" id="inputRepeatPassword" ng-model='register.passConfirmation'>
 
             </div>
         </div>
-        <button type="submit" class="btn btn-success" ng-click="save(product)">S'enregistrer</button>
+        <button type="submit" class="btn btn-success" ng-click="register(register.username, register.email, register.phone, register.pass, register.passConfirmation)">S'enregistrer</button>
     </form>
 </div>
 </div>
