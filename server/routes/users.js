@@ -5,6 +5,7 @@ var redisClient = require('../config/redis_database').redisClient;
 var tokenManager = require('../config/token_manager');
 
 exports.signin = function(req, res) {
+	console.log(req.body);
 	var username = req.body.username || '';
 	var password = req.body.password || '';
 	

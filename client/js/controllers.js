@@ -177,24 +177,25 @@ appControllers.controller('productEditController', function($scope, $routeParams
 });
 
 
-appControllers.controller('adminUserController', ['$scope', '$location', 'UserService', 'AuthenticationService',
-	function adminUserController($scope, $location, UserService, AuthenticationService){
+appControllers.controller('adminUserController', ['$scope', '$location', '$window', 'UserService', 'AuthenticationService',
+	function adminUserController($scope, $location, $window, UserService, AuthenticationService){
 
 
-       $scope.signIn = function signIn(username, password) {
+       $scope.signIn = function signIn (username, password) {
             if (username != null && password != null) {
-
                 UserService.signIn(username, password).success(function(data) {
+                	console.log(data);
                     AuthenticationService.isAuthenticated = true;
                     $window.sessionStorage.token = data.token;
-                    $location.path("/admin");
-                }).error(function(status, data) {
+                    $location.path("/");
+                })
+                .error(function(status, data) {
                     console.log(status);
                     console.log(data);
                 });
             }
         }
-		
+
 		$scope.register = function register (username, email, phone, password, passwordConfirm){
 			console.log(username);
 			if (false){
@@ -203,7 +204,7 @@ appControllers.controller('adminUserController', ['$scope', '$location', 'UserSe
 			else {
 				UserService.register(username, email, phone, password, passwordConfirm)
 				.success(function(){
-					$location.path("/login");
+					$location.path("/signin");
 				})
 				.error(function(status, data){
 					console.log("error");
