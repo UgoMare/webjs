@@ -180,7 +180,6 @@ appControllers.controller('productEditController', function($scope, $routeParams
 appControllers.controller('adminUserController', ['$scope', '$location', '$window', 'UserService', 'AuthenticationService',
 	function adminUserController($scope, $location, $window, UserService, AuthenticationService){
 
-
        $scope.signIn = function signIn (username, password) {
             if (username != null && password != null) {
                 UserService.signIn(username, password).success(function(data) {
@@ -213,5 +212,24 @@ appControllers.controller('adminUserController', ['$scope', '$location', '$windo
 				})
 			}
 		}
+
+		$scope.logOut = function logOut() {
+
+            if (AuthenticationService.isAuthenticated) {    
+            	console.log("logout");
+                UserService.logOut().success(function(data) {
+                	console.log("logout");
+                    AuthenticationService.isAuthenticated = false;
+                    delete $window.sessionStorage.token;
+                    $location.path("/");
+                }).error(function(status, data) {
+                    console.log(status);
+                    console.log(data);
+                });
+            }
+            else {
+                $location.path("/admin/login");
+            }
+        }
 	}
 ]);

@@ -38,6 +38,7 @@ exports.signin = function(req, res) {
 };
 
 exports.logout = function(req, res) {
+	console.log("test");
 	if (req.user) {
 		tokenManager.expireToken(req.headers);
 
@@ -45,6 +46,7 @@ exports.logout = function(req, res) {
 		return res.send(200);
 	}
 	else {
+		console.log("fail");
 		return res.send(401);
 	}
 }
