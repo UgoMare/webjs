@@ -100,6 +100,9 @@ appServices.factory('ProductsService', function($http) {
         },
         create: function(product) {
             return $http.post(options.api.base_url + '/product', {'product': product});
+        },
+        delete: function(id) {
+            return $http.delete(options.api.base_url + '/product/' + id);
         }
     };
 });

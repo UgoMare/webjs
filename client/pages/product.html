@@ -3,10 +3,10 @@
 	<div class="product_page">
 
 		<div class="product">
-		<h2>{{ product.name }}</h2>
-		Ajouté le {{ product.created | date:'d MMM'}}
-		à {{ product.created | date:'hh:mm'}}
-		par {{ product.seller }}
+			<h2>{{ product.name }}</h2>
+			Ajouté le {{ product.created | date:'d MMM'}}
+			à {{ product.created | date:'hh:mm'}}
+			par {{ product.seller }}
 			
 			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-rounded">
 			<div class="thumbs">
@@ -42,21 +42,21 @@
 			</div>
 			<p><a ng-href="/webjs/#/product/{{product.id}}/message">Envoyer un message</a></p>
 		</div>
-		
-		<h3>Gerer son anonce</h3>
-		<div>
-			<div class="wrap-icon">
-				<span class="glyphicon glyphicon-pencil"></span>
+		<div ng-if="isAuth">
+			<h3>Gerer son anonce</h3>
+			<div>
+				<div class="wrap-icon">
+					<span class="glyphicon glyphicon-pencil"></span>
+				</div>
+				<a ng-href="/webjs/#/product/{{product.id}}/edit"><p>Editer</p></a>
 			</div>
-			<a ng-href=""><p>Editer</p></a>
-		</div>
 
-		<div>
-			<div class="wrap-icon">
-				<span class="glyphicon glyphicon-trash"></span>
+			<div>
+				<div class="wrap-icon">
+					<span class="glyphicon glyphicon-trash"></span>
+				</div>
+				<a ng-click="deleteProduct(product.id)"><p>Supprimer</p></a>
 			</div>
-			<a ng-href=""><p>Supprimer</p></a>
 		</div>
-
 	</div>
 </div>

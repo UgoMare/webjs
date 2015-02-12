@@ -38,8 +38,8 @@ app.get('/product/:id', routes.products.get);
 
 app.put('/product', jwt({secret: secret.secretToken}), tokenManager.verifyToken, routes.products.update); 
 
-//Create a new product
 app.post('/product', jwt({secret: secret.secretToken}), tokenManager.verifyToken , routes.products.create); 
 
+app.delete('/product/:id', jwt({secret: secret.secretToken}), tokenManager.verifyToken, routes.products.delete); 
 
 console.log('Blog API is starting on port 3001');

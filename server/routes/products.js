@@ -108,23 +108,6 @@ exports.update = function(req, res) {
 		if (product == null || product.name == null || product.category == null || product.region == null) {
 			return res.send(400);
 		}
-		// updateProduct.name = product.name;
-		// updateProduct.category = product.category;
-		// updateProduct.region = product.region;
-		// if (product.price != null)
-		// 	updateProduct.price = product.price;
-		// if (product.location != null)
-		// 	updateProduct.location = product.location;
-		// if (product.zip_code != null)
-		// 	updateProduct.zip_code = product.zip_code;
-		// if (product.descr != null)
-		// 	updateProduct.price = product.descr;
-		// if (product.img1 != null)
-		// 	updateProduct.img1 = product.img1;
-		// if (product.img2 != null)
-		// 	updateProduct.img2 = product.img2;
-		// if (product.img4 != null)
-		// 	updateProduct.img4 = product.img3;
 		product.updated = new Date();
 
 		db.productModel.update({_id: product.id}, product, function(err, nbRows, raw) {
@@ -135,6 +118,35 @@ exports.update = function(req, res) {
   			}
 			return res.send(200);
 		});
+	});
+};
+
+exports.delete = function(req, res) {
+	if (!req.user) {
+		return res.send(401);
+	}
+
+	var id = req.params.id;
+	if (id == null || id == '') {
+		res.send(400);
+	} 
+
+	var query = db.productModel.findOne({_id:id});
+
+	query.exec(function(err, result) {
+		if (err) {
+			console.log(err);
+			return res.send(400);
+		}
+
+		if (result != null) {
+			result.remove();
+			return res.send(200);
+		}
+		else {
+			return res.send(400);
+		}
+		
 	});
 };
 
