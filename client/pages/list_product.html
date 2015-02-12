@@ -21,8 +21,8 @@
 	<div class="products">
 		<div class="product" ng-repeat="product in products | filter:searchProduct:strict">
 			<div class="date">
-				<p>{{ product.created_at | date:'d MMM'}}</p>
-				<p>{{ product.created_at | date:'hh:mm'}}</p>
+				<p>{{ product.created | date:'d MMM'}}</p>
+				<p>{{ product.created | date:'hh:mm'}}</p>
 			</div>
 			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-thumbnail">
 			<div class="info">

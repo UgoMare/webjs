@@ -11,7 +11,7 @@ app.use(bodyParser());
 app.use(morgan());
 
 var routes = {};
-routes.posts = require('./routes/products.js');
+routes.products = require('./routes/products.js');
 routes.users = require('./routes/users.js');
 
 app.all('*', function(req, res, next) {
@@ -31,5 +31,11 @@ app.post('/user/signin', routes.users.signin);
 
 //Logout
 app.get('/user/logout', jwt({secret: secret.secretToken}), routes.users.logout); 
+
+app.get('/products', routes.products.all);
+
+//Create a new product
+app.post('/product', jwt({secret: secret.secretToken}), tokenManager.verifyToken , routes.products.create); 
+
 
 console.log('Blog API is starting on port 3001');

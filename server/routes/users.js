@@ -28,7 +28,7 @@ exports.signin = function(req, res) {
 				console.log("Attempt failed to login with " + user.username);
 				return res.send(401);
             }
-
+            console.log(user.id);
 			var token = jwt.sign({id: user._id}, secret.secretToken, { expiresInMinutes: tokenManager.TOKEN_EXPIRATION });
 			
 			return res.json({token:token});
@@ -38,7 +38,6 @@ exports.signin = function(req, res) {
 };
 
 exports.logout = function(req, res) {
-	console.log("test");
 	if (req.user) {
 		tokenManager.expireToken(req.headers);
 

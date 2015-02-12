@@ -19,7 +19,7 @@ hoMyGodeApp.config(function($routeProvider) {
 
 		//product list
 
-		.when('/product', {
+		.when('/products', {
 			templateUrl: 'pages/list_product.html',
 			controller: 'productsController'
 		})

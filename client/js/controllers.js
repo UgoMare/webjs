@@ -12,19 +12,6 @@ products = [
 {id: 10, name: "produit10", descr: "Ceci est un produit", category: "category 10", price: "10", seller: "seller10", region: "Auvergne", location: "location10", zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"}
 ];
 
-// products = [
-// 		{id: 1,  name: "Boules de Geïsha",  descr: "Ceci est un Boules de Geïsha", category: "Boules de Geïsha", price: "30", seller: "seller1",  region: "Auvergne", location: "location1",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 2,  name: "Canard Vibrant",  descr: "Ceci est un Canard Vibrant", category: "Canard Vibrant", price: "59,99", seller: "seller2",  region: "Aquitaine", location: "location2",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 3,  name: "Oeufs Vibrants",  descr: "Ceci est un Oeufs Vibrants", category: "Oeufs Vibrants", price: "28", seller: "seller3",  region: "Alsace", location: "location3",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 4,  name: "Sextoy Rabbit",  descr: "Ceci est un Sextoy Rabbit", category: "Sextoy Rabbit", price: "59", seller: "seller4",  region: "Bourgogne", location: "location4",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 5,  name: "Coffrets & Accessoires",  descr: "Ceci est un Coffrets & Accessoires", category: "Coffrets & Accessoires", price: "10.00", seller: "seller5",  region: "Bretagne", location: "location5",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 6,  name: "Gode & Godemichet",  descr: "Ceci est un Gode & Godemichet", category: "Gode & Godemichet", price: "130", seller: "seller6",  region: "Centre", location: "location6",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 7,  name: "Gode Ceinture",  descr: "Ceci est un Gode Ceinture", category: "Gode Ceinture", price: "25", seller: "seller7",  region: "Corse", location: "location7",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 8,  name: "Sextoys Anal",  descr: "Ceci est un Sextoys Anal", category: "Sextoys Anal", price: "12", seller: "seller8",  region: "Limousin", location: "location8",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 9,  name: "Vibromasseurs",  descr: "Ceci est un Vibromasseurs", category: "Vibromasseurs", price: "8", seller: "seller9",  region: "Lorraine", location: "location9",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-// 		{id: 10, name: "Poupée Gonflabe", descr: "Ceci est une Poupée Gonflabe", category: "Poupée Gonflabe", price: "1200", seller: "seller10", region: "Picardie", location: "location10", zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"}
-// 	];
-
 
 regions = [
 { name: "Alsace" },
@@ -77,12 +64,34 @@ appControllers.controller('mainController', function($scope, $route, $routeParam
 
 });
 
-appControllers.controller('productsController', function($scope){
+// appControllers.controller('productsController', function($scope){
 
-	$scope.products = products;
-	$scope.regions = regions;
-	$scope.categories = categories;
-});
+// 	$scope.products = products;
+
+// });
+
+
+appControllers.controller('productsController', ['$scope', '$sce', 'ProductsService',
+    function productsController($scope, $sce, ProductsService) {
+        $scope.regions = regions;
+        $scope.categories = categories;
+        $scope.products = [];
+        console.log("in");
+        ProductsService.allProducts().success(function(data) {
+                console.log(data);
+            // for (var postKey in data) {
+            //     data[postKey].content = $sce.trustAsHtml(data[postKey].content);
+            // }
+
+            // $scope.posts = data;
+            $scope.products = data;
+            $scope.products = products;
+        }).error(function(data, status) {
+            console.log(status);
+            console.log(data);
+        });
+    }
+]);
 
 appControllers.controller('productController', function($scope, $routeParams){
 	
@@ -96,36 +105,27 @@ appControllers.controller('productMessageController', function($scope, $routePar
 	$scope.product = products[id-1];
 });
 
-appControllers.controller('productNewController', function($scope){
-
-	$scope.uploadFile = function(files) {
-		var fd = new FormData();
-
-		fd.append("file", files[0]);
-
-    // $http.post("uploadUrl", fd, {
-    //     withCredentials: true,
-    //     headers: {'Content-Type': undefined },
-    //     transformRequest: angular.identity
-    // }).success( ...all right!... ).error( ..damn!... );	
-
-};
-
-
-$scope.save = function save(product) {
-	if (product != undefined 
-		&& product.name != undefined
-		&& product.category != undefined
-		&& product.region != undefined) {
-		console.log(product);
-	PostService.create(post).success(function(data) {
-		$location.path("/admin");
-	}).error(function(status, data) {
-		console.log(status);
-		console.log(data);
-	});
-}
-}});
+appControllers.controller('productNewController', ['$scope', '$location', 'ProductsService',
+    function productNewController($scope, $location, ProductsService) {
+        $scope.regions = regions;
+        $scope.categories = categories;
+        
+        $scope.save = function save(product) {
+            if (product != undefined 
+                && product.name != undefined
+                && product.category != undefined
+                && product.region != undefined) {
+                    ProductsService.create(product).success(function(data) {
+                        console.log(data);
+                        // $location.path("/admin");
+                    }).error(function(status, data) {
+                        console.log(status);
+                        console.log(data);
+                    });
+            }
+        }
+    }
+]);
 
 appControllers.controller('productEditController', function($scope, $routeParams){
 

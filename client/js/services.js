@@ -86,6 +86,19 @@ appServices.factory('PostService', function($http) {
     };
 });
 
+
+appServices.factory('ProductsService', function($http) {
+    return {
+        allProducts: function() {
+            return $http.get(options.api.base_url + '/products');
+        },
+        create: function(product) {
+            return $http.post(options.api.base_url + '/product', {'product': product});
+        }
+    };
+});
+
+
 appServices.factory('UserService', function ($http) {
     return {
         signIn: function(username, password) {
