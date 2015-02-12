@@ -1,5 +1,5 @@
 var db = require('../config/mongo_database.js');
-var publicFields = '_id name category region price location zip_code descr img1 img2 img3 created';
+var publicFields = '_id name category region price location zip_code descr img1 img2 img3 created user_id';
 
 
 
@@ -18,6 +18,46 @@ exports.all = function(req, res) {
 	});
 };
 
+exports.get = function(req, res) {
+	var id = req.params.id || '';
+	if (id == '') {
+		return res.send(400);
+	}
+	var query = db.productModel.findOne({_id: id});
+	query.select(publicFields);
+	query.exec(function(err, result) {
+		if (err) {
+  			console.log(err);
+  			return res.send(400);
+  		}
+
+  		if (result != null) {
+  			db.userModel.findOne({_id: result['user_id']}, function (err, user) {
+  				product = {};
+  				product['seller'] = user.username;
+  				product['phone_number'] = user.phone_number;
+  				product['email'] = user.email;
+  				product['id'] = result._id;
+				product['name'] = result.name;
+				product['category'] = result.category;
+				product['region'] = result.region;
+				product['price'] = result.price;
+				product['location'] = result.location;
+				product['zip_code'] = result.zip_code;
+				product['descr'] = result.descr;
+				product['img1'] = result.img1;
+				product['img2'] = result.img2;
+				product['img3'] = result.img3;
+				product['created'] = result.created;
+				console.log(product);
+				return res.json(200, product);
+			});
+		
+  		} else {
+  			return res.send(400);
+  		}
+	});
+};
 
 exports.create = function(req, res) {
 	if (!req.user) {
@@ -52,3 +92,49 @@ exports.create = function(req, res) {
 		});
 	});
 }
+
+exports.update = function(req, res) {
+	if (!req.user) {
+		return res.send(401);
+	}
+	db.productModel.findOne({_id: req.body.product.id ,user_id: req.user.id}, function (err, user) {
+			if (err) {
+  			console.log(err);
+  			return res.send(400);
+  		}
+		var product = req.body.product;
+		var updateProduct = {};
+		console.log(req.body);	
+		if (product == null || product.name == null || product.category == null || product.region == null) {
+			return res.send(400);
+		}
+		// updateProduct.name = product.name;
+		// updateProduct.category = product.category;
+		// updateProduct.region = product.region;
+		// if (product.price != null)
+		// 	updateProduct.price = product.price;
+		// if (product.location != null)
+		// 	updateProduct.location = product.location;
+		// if (product.zip_code != null)
+		// 	updateProduct.zip_code = product.zip_code;
+		// if (product.descr != null)
+		// 	updateProduct.price = product.descr;
+		// if (product.img1 != null)
+		// 	updateProduct.img1 = product.img1;
+		// if (product.img2 != null)
+		// 	updateProduct.img2 = product.img2;
+		// if (product.img4 != null)
+		// 	updateProduct.img4 = product.img3;
+		product.updated = new Date();
+
+		db.productModel.update({_id: product.id}, product, function(err, nbRows, raw) {
+			console.log(product.name);
+			if (err) {
+  				console.log(err);
+				return res.send(400);
+  			}
+			return res.send(200);
+		});
+	});
+};
+

@@ -4,12 +4,10 @@
 	  	<!-- Search by name -->
 	    <input type="text" class="form-control" placeholder="" ng-model="searchProduct.name">
 		<!-- Search by category -->
-		<select class="selectpicker show-tick form-control" data-live-search="true" title="Category" ng-model="searchProduct.category" ng-options="category.name for category in categories">
-			<option value="">Toutes les categories</option>
+		<select class="selectpicker show-tick form-control" data-live-search="true" title="Category" ng-init="searchProduct.category = categories[0].value" ng-model="searchProduct.category" ng-options="category.value as category.name for category in categories">
 		</select>
 		<!-- Search by region -->
-		<select class="selectpicker show-tick form-control" data-live-search="true" title="Region" ng-model="searchProduct.region" ng-options="region.name for region in regions">
-			<option value="">Toute la France</option>
+		<select class="selectpicker show-tick form-control" data-live-search="true" title="Region" ng-init="searchProduct.region = regions[0].value" ng-model="searchProduct.region" ng-options="region.value as region.name for region in regions">
 		</select>
 		<!-- Seach by location -->
 	    <input type="text" class="form-control" placeholder="Ville" ng-model="searchProduct.location">
@@ -26,7 +24,7 @@
 			</div>
 			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-thumbnail">
 			<div class="info">
-				<p><b><a ng-href="/webjs/#/product/{{product.id}}">{{ product.name }}</a></b></p>
+				<p><b><a ng-href="/webjs/#/product/{{product._id}}">{{ product.name }}</a></b></p>
 				<p>{{ product.category }}</p>
 				<p>{{ product.location }}</p>
 				<p><b>{{ product.price }} €</b></p>

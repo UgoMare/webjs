@@ -34,6 +34,10 @@ app.get('/user/logout', jwt({secret: secret.secretToken}), routes.users.logout);
 
 app.get('/products', routes.products.all);
 
+app.get('/product/:id', routes.products.get);
+
+app.put('/product', jwt({secret: secret.secretToken}), tokenManager.verifyToken, routes.products.update); 
+
 //Create a new product
 app.post('/product', jwt({secret: secret.secretToken}), tokenManager.verifyToken , routes.products.create); 
 

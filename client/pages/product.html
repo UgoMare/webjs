@@ -4,8 +4,8 @@
 
 		<div class="product">
 		<h2>{{ product.name }}</h2>
-		Ajouté le {{ product.created_at | date:'d MMM'}}
-		à {{ product.created_at | date:'hh:mm'}}
+		Ajouté le {{ product.created | date:'d MMM'}}
+		à {{ product.created | date:'hh:mm'}}
 		par {{ product.seller }}
 			
 			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-rounded">

@@ -89,8 +89,14 @@ appServices.factory('PostService', function($http) {
 
 appServices.factory('ProductsService', function($http) {
     return {
-        allProducts: function() {
+        all: function() {
             return $http.get(options.api.base_url + '/products');
+        },
+         get: function(id) {
+            return $http.get(options.api.base_url + '/product/' + id);
+        },
+        update: function(product) {
+            return $http.put(options.api.base_url + '/product', {'product': product});
         },
         create: function(product) {
             return $http.post(options.api.base_url + '/product', {'product': product});
