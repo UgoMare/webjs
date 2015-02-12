@@ -125,8 +125,9 @@ appControllers.controller('productNewController', ['$scope', '$location', 'Produ
                 && product.region != undefined) {
                 ProductsService.create(product).success(function(data) {
                     console.log(data);
-                        // $location.path("/admin");
+                        $location.path("/products");
                     }).error(function(status, data) {
+                        $location.path("/signin");
                         console.log(status);
                         console.log(data);
                     });
@@ -179,7 +180,7 @@ appControllers.controller('adminUserController', ['$scope', '$location', '$windo
                console.log(data);
                AuthenticationService.isAuthenticated = true;
                $window.sessionStorage.token = data.token;
-               $location.path("/");
+               $location.path("/products");
            })
             .error(function(status, data) {
                 console.log(status);
@@ -221,7 +222,7 @@ $scope.logOut = function logOut() {
     });
    }
    else {
-    $location.path("/admin/login");
+    $location.path("/signin");
 }
 }
 }

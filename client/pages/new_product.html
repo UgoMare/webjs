@@ -9,10 +9,10 @@
 
 
                 <label for="inputCategory">Categorie</label><span class="mandatory-star">*</span>
-                <select class="selectpicker show-tick form-control" title="Category" ng-init="product.category = categories[0]" ng-model="product.category" ng-options="category.name for category in categories"></select>
+                <select class="selectpicker show-tick form-control" title="Category" ng-init="product.category = categories[1]" ng-model="product.category" ng-options="category.name for category in categories"></select>
 
                 <label for="inputRegion">Region</label><span class="mandatory-star">*</span>
-                <select class="selectpicker show-tick form-control" title="Region" ng-init="product.region = regions[0]" ng-model="product.region" ng-options="region.name for region in regions"></select>
+                <select class="selectpicker show-tick form-control" title="Region" ng-init="product.region = regions[1]" ng-model="product.region" ng-options="region.name for region in regions"></select>
 
                 <label for="inputPrice">Prix</label>
                 <input type="text" class="form-control" id="inputPrice" placeholder="10" ng-model="product.price" ng-init="product.price = '10'">
