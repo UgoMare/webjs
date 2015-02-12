@@ -1,23 +1,9 @@
-products = [
-{id: 1,  name: "Boules de Geïsha",  descr: "Ceci est un Boules de Geïsha", category: 1, price: "30", seller: "seller1",  region: "Auvergne", location: "location1",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 2,  name: "Canard Vibrant",  descr: "Ceci est un Canard Vibrant", category: "Canard Vibrant", price: "59,99", seller: "seller2",  region: "Aquitaine", location: "location2",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 3,  name: "Oeufs Vibrants",  descr: "Ceci est un Oeufs Vibrants", category: "Oeufs Vibrants", price: "28", seller: "seller3",  region: "Alsace", location: "location3",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 4,  name: "Sextoy Rabbit",  descr: "Ceci est un Sextoy Rabbit", category: "Sextoy Rabbit", price: "59", seller: "seller4",  region: "Bourgogne", location: "location4",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 5,  name: "Coffrets & Accessoires",  descr: "Ceci est un Coffrets & Accessoires", category: "Coffrets & Accessoires", price: "10.00", seller: "seller5",  region: "Bretagne", location: "location5",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 6,  name: "Gode & Godemichet",  descr: "Ceci est un Gode & Godemichet", category: "Gode & Godemichet", price: "130", seller: "seller6",  region: "Centre", location: "location6",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 7,  name: "Gode Ceinture",  descr: "Ceci est un Gode Ceinture", category: "Gode Ceinture", price: "25", seller: "seller7",  region: "Corse", location: "location7",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 8,  name: "Sextoys Anal",  descr: "Ceci est un Sextoys Anal", category: "Sextoys Anal", price: "12", seller: "seller8",  region: "Limousin", location: "location8",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 9,  name: "Vibromasseurs",  descr: "Ceci est un Vibromasseurs", category: "Vibromasseurs", price: "8", seller: "seller9",  region: "Lorraine", location: "location9",  zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"},
-{id: 10, name: "Poupée Gonflabe", descr: "Ceci est une Poupée Gonflabe", category: "Poupée Gonflabe", price: "1200", seller: "seller10", region: "Picardie", location: "location10", zip_code: "12345", img1: "images/thumb.png", img2: "images/thumb.png", img3: "images/thumb.png", created_at: new Date(), phone_number:"0622334455"}
-];
-
-
 regions = [
 { name: "Toute la france", value: "" },
 { name: "Alsace", value: "Alsace" },
 { name: "Aquitaine", value: "Aquitaine" },
 { name: "Auvergne", value: "Auvergne"},
-{ name: "Basse-Normandie" },
+{ name: "Basse-Normandie", value: "Basse-Normandie" },
 { name: "Bourgogne", value: "Bourgogne" },
 { name: "Bretagne", value: "Bretagne" },
 { name: "Centre", value: "Centre" },
@@ -40,23 +26,16 @@ regions = [
 
 categories = [
 { name: "Toutes les categories", value: "" },
-{ name: "Boules de Geïsha" },
-{ name: "Canard Vibrant" },
-{ name: "Oeufs Vibrants" },
-{ name: "Sextoy Rabbit" },
-{ name: "Coffrets & Accessoires" },
-{ name: "Gode & Godemichet" },
-{ name: "Gode Ceinture" },
-{ name: "Machine de l'Amour" },
-{ name: "Sextoys Anal" },
-{ name: "Stimulateurs Clitoridiens" },
-{ name: "Vibromasseurs" },
-{ name: "Masturbateur Homme" },
-{ name: "Poupée Gonflabe" },
-{ name: "Stimulateur Prostatique" },
-{ name: "Anneaux & Gaines de Pénis" },
-{ name: "Gode & Plug" },
-{ name: "Gode Ceinture Homme" }
+{ name: "Boules de Geïsha", value: "Boules de Geïsha" },
+{ name: "Canard Vibrant", value: "Canard Vibrant" },
+{ name: "Oeufs Vibrants", value: "Oeufs Vibrants" },
+{ name: "Sextoy Rabbit", value: "Sextoy Rabbit" },
+{ name: "Coffrets & Accessoires", value: "Coffrets & Accessoires" },
+{ name: "Gode Ceinture", value: "Gode Ceinture" },
+{ name: "Vibromasseurs", value: "Vibromasseurs" },
+{ name: "Poupée Gonflabe", value: "Poupée Gonflabe" },
+{ name: "Gode & Plug", value: "Gode & Plug" },
+
 ];
 
 appControllers.controller('mainController', function($scope, $route, $routeParams){
@@ -105,7 +84,7 @@ appControllers.controller('productController', ['$scope', '$routeParams', '$loca
             }
         }
     }
-]);
+    ]);
 
 appControllers.controller('productMessageController', function($scope, $routeParams){
 
@@ -125,16 +104,16 @@ appControllers.controller('productNewController', ['$scope', '$location', 'Produ
                 && product.region != undefined) {
                 ProductsService.create(product).success(function(data) {
                     console.log(data);
-                        $location.path("/products");
-                    }).error(function(status, data) {
-                        $location.path("/signin");
-                        console.log(status);
-                        console.log(data);
-                    });
-                }
+                    $location.path("/products");
+                }).error(function(status, data) {
+                    $location.path("/signin");
+                    console.log(status);
+                    console.log(data);
+                });
             }
         }
-        ]);
+    }
+    ]);
 
 appControllers.controller('productEditController', ['$scope', '$routeParams', '$location', '$sce', 'ProductsService', 'AuthenticationService',
     function productEditController($scope, $routeParams, $location, $sce, ProductsService, AuthenticationService) {
@@ -208,9 +187,8 @@ appControllers.controller('adminUserController', ['$scope', '$location', '$windo
 }
 
 $scope.logOut = function logOut() {
-
+    
     if (AuthenticationService.isAuthenticated) {    
-       console.log("logout");
        UserService.logOut().success(function(data) {
            console.log("logout");
            AuthenticationService.isAuthenticated = false;

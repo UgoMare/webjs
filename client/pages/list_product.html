@@ -27,17 +27,17 @@
 				<p><b><a ng-href="/webjs/#/product/{{product._id}}">{{ product.name }}</a></b></p>
 				<p>{{ product.category }}</p>
 				<p>{{ product.location }}</p>
-				<p><b>{{ product.price }} €</b></p>
+				<p ng-if="product.price"><b>{{ product.price }} €</b></p>
 			</div>
 		</div>
 	</div>
 	<div class="latest">
 		<h2>Produits a la une</h2>
-		<div class="product" ng-repeat="product in products">
+		<div class="product" ng-repeat="product in products | limitTo:4">
 			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-thumbnail">
 			<div class="info">
 				<p></p><b><a ng-href="/webjs/#/product/{{product.id}}">{{ product.name }}</a></b></p>
-				<p><b>{{ product.price }} €</b></p>
+				<p ng-if="product.price"><b>{{ product.price }} €</b></p>
 			</div>
 		</div>
 	</div>
