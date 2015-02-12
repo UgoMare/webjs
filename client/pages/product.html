@@ -10,9 +10,9 @@
 			
 			<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-rounded">
 			<div class="thumbs">
-				<img src="{{ product.img1 }}" alt="{{ product.name }}" class="img-thumbnail">
-				<img src="{{ product.img2 }}" alt="{{ product.name }}" class="img-thumbnail">
-				<img src="{{ product.img3 }}" alt="{{ product.name }}" class="img-thumbnail">
+				<img ng-if="product.img1" src="{{ product.img1 }}" alt="{{ product.name }}" class="img-thumbnail">
+				<img ng-if="product.img2" src="{{ product.img2 }}" alt="{{ product.name }}" class="img-thumbnail">
+				<img ng-if="product.img3" src="{{ product.img3 }}" alt="{{ product.name }}" class="img-thumbnail">
 			</div>
 
 			<div class="info">
