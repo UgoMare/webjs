@@ -33,10 +33,10 @@
 
 		<footer>
 			<span>OHMYGODE - All Rights Reserved</span>
-			<a ng-href="/webjs/#/signin">signin</a>
-			<a ng-href="/webjs/#/register">signup</a>
-			<a ng-href="/webjs/#/logout">logout</a>	
-			<a ng-href="/webjs/#/product/new">nouveau produit</a>	
+			<a ng-else="checkAuth()" class="btn btn-small btn-info" ng-href="/webjs/#/signin">signin</a>
+			<a class="btn btn-small btn-warning" ng-href="/webjs/#/register">signup</a>
+			<a class="btn btn-small btn-danger" ng-href="/webjs/#/logout">logout</a>	
+			<a class="btn btn-small btn-success" ng-href="/webjs/#/product/new">nouveau produit</a>	
 		</footer>
 	</div>
 </body>

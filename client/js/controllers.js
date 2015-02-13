@@ -38,9 +38,10 @@ categories = [
 
 ];
 
-appControllers.controller('mainController', function($scope, $route, $routeParams){
+appControllers.controller('mainController', function($scope, $route, $routeParams, AuthenticationService){
 	
 	$scope.params = $routeParams;
+    $scope.isAuth = AuthenticationService.isAuthenticated;
 
 });
 
@@ -92,8 +93,8 @@ appControllers.controller('productMessageController', function($scope, $routePar
 	$scope.product = products[id-1];
 });
 
-appControllers.controller('productNewController', ['$scope', '$location', 'ProductsService',
-    function productNewController($scope, $location, ProductsService) {
+appControllers.controller('productNewController', ['$scope', '$location', 'ProductsService', 'AuthenticationService',
+    function productNewController($scope, $location, ProductsService, AuthenticationService) {
         $scope.regions = regions;
         $scope.categories = categories;
         
@@ -162,8 +163,7 @@ appControllers.controller('adminUserController', ['$scope', '$location', '$windo
                $location.path("/products");
            })
             .error(function(status, data) {
-                console.log(status);
-                console.log(data);
+                $scope.error_login = true;
             });
         }
     }
@@ -179,7 +179,7 @@ appControllers.controller('adminUserController', ['$scope', '$location', '$windo
            $location.path("/signin");
        })
         .error(function(status, data){
-           console.log("error");
+           $scope.error_signup = true;
            console.log(status);
            console.log(data);
        })
